@@ -1,116 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Wyatt's Game Hub</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:black;
-color:white;
-text-align:center;
-}
-
-header{
-background:#111;
-padding:20px;
-font-size:30px;
-}
-
-button{
-
-padding:15px;
-margin:10px;
-font-size:20px;
-border-radius:10px;
-border:none;
-cursor:pointer;
-
-}
-
-.game{
-display:none;
-margin-top:20px;
-font-size:25px;
-}
-
-</style>
-
+<title>Wyatt's Game Portal</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-🎮 Wyatt's Game Hub
+
+<h1>🎮 Wyatt's Game Portal</h1>
+
+<button onclick="window.location.href='games.html'">
+Browse Games
+</button>
+
 </header>
-
-<button onclick="showGame('clicker')">Clicker Game</button>
-<button onclick="showGame('guess')">Guess Game</button>
-
-<div id="clicker" class="game">
-
-<h2>Clicker Game</h2>
-
-<p>Score: <span id="score">0</span></p>
-
-<button onclick="clickScore()">CLICK ME</button>
-
-</div>
-
-<div id="guess" class="game">
-
-<h2>Guess Game</h2>
-
-<input id="guessInput">
-<button onclick="guess()">Guess</button>
-
-<p id="result"></p>
-
-</div>
-
-<script>
-
-let score=0;
-
-function clickScore(){
-
-score++;
-
-document.getElementById("score").innerText=score;
-
-}
-
-let number=Math.floor(Math.random()*10)+1;
-
-function guess(){
-
-let g=document.getElementById("guessInput").value;
-
-if(g==number){
-
-result.innerText="YOU WIN";
-
-}else{
-
-result.innerText="WRONG";
-
-}
-
-}
-
-function showGame(game){
-
-document.getElementById("clicker").style.display="none";
-document.getElementById("guess").style.display="none";
-
-document.getElementById(game).style.display="block";
-
-}
-
-</script>
 
 </body>
 </html>
- 
